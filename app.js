@@ -12,7 +12,8 @@ app.controller("testController", function($scope, $http) {
     $http
     .get("http://myapi-profstream.herokuapp.com/api/bc9626/persons")
     .then(function(users) {
-        console.log(users);
+        // Assign data coming from the API to the scope
+        $scope.users = users.data;
     }, function(err) {
         console.log(err);
     });
