@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Angular Testing</title>
+
+        <!--Angular Framework-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+
+        <!--Main Application-->
+        <script src="app.js"></script>
+    </head>
+    <body ng-controller="testController">
+
+        <div>
+            <!--Standard input with ng-model data binding syntax-->
+            <input type="text" ng-model="userInput" />
+        </div>
+
+        <div>
+            <!--Expression that evaluates userInput-->
+            {{ userInput }}
+        </div>
+
+        <div>
+            <button ng-click="showInput()">Click Me</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users">
+                    <td>{{user.firstname}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
